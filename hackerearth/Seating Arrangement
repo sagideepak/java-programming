@@ -1,0 +1,44 @@
+import java.util.*;
+import java.lang.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+       
+      	Scanner sc=new Scanner(System.in);
+	    int facing_seat_no,seat_type;
+		int test_case=sc.nextInt();
+		
+		//System.out.println("test_case="+test_case);
+		
+		for(int i=0;i<test_case;i++)
+		{
+		    
+		   int seat_no=sc.nextInt();
+		   
+		    if(seat_no%12!=0){
+		        
+		        seat_type=13-(2*(seat_no%12));
+		        facing_seat_no=seat_no+seat_type;
+		        
+		         //System.out.println("seat_no="+seat_no);
+		         //System.out.println("seat_type="+seat_type);
+		        
+		        if(Math.abs(seat_type)==1 || Math.abs(seat_type)==11){
+		            System.out.println(facing_seat_no+" WS");
+		        }
+		        else if(Math.abs(seat_type)==3 || Math.abs(seat_type)==9){
+		            System.out.println(facing_seat_no+" MS");
+		        }
+		        else if(Math.abs(seat_type)==5 || Math.abs(seat_type)==7){
+		            System.out.println(facing_seat_no+" AS");
+		        }
+		        
+		    }
+		    
+		    else{
+		        facing_seat_no=seat_no-11;
+		        System.out.println(facing_seat_no+" WS");
+		    }
+		    
+		}
+    }
+}
