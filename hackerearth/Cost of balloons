@@ -1,0 +1,46 @@
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+
+        Scanner sc=new Scanner(System.in);
+        int test_case=sc.nextInt();
+        
+        for(int i=0;i<test_case;i++)
+        {
+          int problem1_status,problem2_status,min_cost1=0,min_cost2=0;
+          int max,min;
+          int ballon_cost[]=new int[2];
+          ballon_cost[0]=sc.nextInt();
+          ballon_cost[1]=sc.nextInt();
+          
+          if( ballon_cost[0]< ballon_cost[1])
+          {
+              max= ballon_cost[1];
+              min=  ballon_cost[0];
+          }
+          else{
+              max= ballon_cost[0];
+              min=  ballon_cost[1];
+          }
+         
+          
+          int paticipants=sc.nextInt();
+         
+          for(int j=0;j<paticipants;j++){
+               problem1_status=sc.nextInt();
+               problem2_status=sc.nextInt();
+               min_cost1+=(problem1_status*min)+(problem2_status*max);
+               min_cost2+=(problem2_status*min)+(problem1_status*max);
+           
+          }
+          
+          if(min_cost1<min_cost2){
+              System.out.println(min_cost1);
+          }
+          else{
+              System.out.println(min_cost2);
+          }
+        }
+
+    }
+}
