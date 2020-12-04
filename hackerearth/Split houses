@@ -1,0 +1,28 @@
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+       Scanner sc=new Scanner(System.in);
+	    int status=0;
+		int grid=sc.nextInt();
+		String village=sc.next();
+		   
+	    for(int i=0;i<grid-1;i++){
+	        
+	        if(village.charAt(i)=='H')
+	        {
+	            if(village.charAt(i)==village.charAt(i+1)){
+	                 System.out.println("NO");
+	                 status=1;
+	                 break;
+	            }
+	        }
+	    }
+	    
+	    if(status==0)
+	    {
+	     System.out.println("YES");
+	     System.out.println(village.replace('.','B'));
+	    }
+ 
+    }
+}
