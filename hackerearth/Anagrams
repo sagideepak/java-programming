@@ -1,0 +1,90 @@
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        
+         Scanner sc=new Scanner(System.in);
+		int testcase=sc.nextInt();
+		String str1,str2;
+	
+		for(int i=0;i<testcase;i++){
+		    String angram="";
+		    str1=sc.next();
+		    str2=sc.next();
+			char strArray1[] = str1.toCharArray();
+		    char strArray2[] = str2.toCharArray();
+	        Arrays.sort(strArray1);
+	        Arrays.sort(strArray2);
+	        str1=new String(strArray1);
+	        str2=new String(strArray2);
+
+		    int common_char=0;
+		    
+		
+		if( ( str1.length()<str2.length() ) || ( str1.length()==str2.length() ) ){
+		        
+		        for(int j=0;j<str1.length();j++){
+		            
+		            if( str2.indexOf( str1.charAt(j) ) != -1){
+		              
+		               if( angram.indexOf( str1.charAt(j) ) == -1){
+		                  angram=angram+ str1.charAt(j);
+		                  common_char++;
+		                  
+		               }
+		           }
+		        }
+		    }
+		    
+		    else{
+		        
+		         for(int k=0;k<str2.length();k++){
+		            
+		       
+		            if( str1.indexOf( str2.charAt(k) ) != -1){
+		               
+		               if( angram.indexOf( str2.charAt(k) ) == -1){
+		                  angram=angram+ str2.charAt(k);
+
+		               }
+		           }
+		        }
+		    }
+		    
+		    int count1=0,count2=0;
+		    for(int l=0;l<angram.length();l++)
+		    {
+		        for(int m=0;m<str1.length();m++)
+		        {
+		            if(angram.charAt(l)==str1.charAt(m))
+		            {
+		                count1++;
+		            }
+		        }
+		        
+		          for(int n=0;n<str2.length();n++)
+		        {
+		            if(angram.charAt(l)==str2.charAt(n))
+		            {
+		                count2++;
+		            }
+		        }
+		        if(count1>count2)
+		        {
+		            common_char=count2;
+		            count1=count2;
+		        
+		        }
+		        else{
+		            common_char=count1;
+		            count2=count1;
+		           
+		        }
+		    }
+		    
+		    System.out.println(str1.length()+str2.length()-(2*common_char));
+		}
+	
+ 
+ 
+    }
+}
