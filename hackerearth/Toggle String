@@ -1,0 +1,24 @@
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        	Scanner sc=new Scanner(System.in);
+        StringBuilder str=new StringBuilder(sc.next());
+          String s="";
+        for(int i=0;i<str.length();i++){
+            int ascii=str.charAt(i);
+           if(ascii>=65 && ascii<=90){
+                 ascii=ascii+32;
+                 char k=(char)ascii;
+                 s=s+k;
+            }
+            else{
+                 ascii=ascii-32;
+                 char k=(char)ascii;
+                 s=s+k;
+            }
+        }
+
+      System.out.println(s);
+
+    }
+}
