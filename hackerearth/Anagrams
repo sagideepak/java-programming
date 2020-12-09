@@ -1,3 +1,67 @@
+Simple mehod:-
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+		int testcase=sc.nextInt();
+	
+		for(int i=0;i<testcase;i++){
+		    StringBuilder  str1= new StringBuilder(sc.next()); 
+		     StringBuilder  str2= new StringBuilder(sc.next()); 
+		    int common_char=0;
+		    
+		
+		    if( ( str1.length()<str2.length() ) || ( str1.length()==str2.length() ) ){
+		        
+		        for(int j=0;j<str1.length();j++){
+		            
+		           for(int k=0;k<str2.length();k++){
+		               
+		               if(str1.charAt(j)==str2.charAt(k)){
+		                   common_char++;
+		                   str1.setCharAt(j, '0'); 
+		                   str2.setCharAt(k, '0');
+		                   break;
+		               }
+		               
+		           }
+		        }
+		    }
+		    
+		    else{
+		        
+		        for(int j=0;j<str2.length();j++){
+		            
+		           for(int k=0;k<str1.length();k++){
+		               
+		               if(str2.charAt(j)==str1.charAt(k)){
+		                   common_char++;
+		                   str2.setCharAt(j, '0'); 
+		                   str1.setCharAt(k, '0');
+		                   break;
+		               }
+		               
+		           }
+		        }
+		    }
+		    
+		    System.out.println(str1.length()+str2.length()-(2*common_char));
+		}
+	
+	}
+}
+
+
+
+
+
+
+
+
+complex method:-
+
 import java.util.*;
 class TestClass {
     public static void main(String args[] ) throws Exception {
