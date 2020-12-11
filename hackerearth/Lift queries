@@ -1,0 +1,26 @@
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner sc=new Scanner(System.in);
+        int testcases=sc.nextInt();
+        int lift_a=0,lift_b=7; 
+
+        for(int i=0;i<testcases;i++){
+
+               int floor=sc.nextInt();
+
+               if( ( (Math.abs(floor-lift_a)) < (Math.abs(floor-lift_b)) ) || ( (Math.abs(floor-lift_a)) == (Math.abs(floor-lift_b)) ) )
+               {
+                   System.out.println("A");
+                   lift_a=floor;
+               }
+               else{
+                   System.out.println("B");
+                   lift_b=floor;
+               }
+
+
+        }
+
+    }
+}
