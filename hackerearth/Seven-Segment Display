@@ -1,0 +1,58 @@
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+
+        for(int i=0;i<t;i++){
+             
+             int matches=0;
+             String v=sc.next();
+             String max="";
+
+             for(int j=0;j<v.length();j++){
+                    
+                    char ch=v.charAt(j);
+
+                    if(ch=='1'){
+                        matches=matches+2;
+                    }
+                    else if(ch=='2' || ch=='3' || ch=='5'){
+                        matches=matches+5;
+                    }
+                    else if(ch=='4'){
+                        matches=matches+4;
+                    }
+                    else if(ch=='6' || ch=='9' || ch =='0'){
+                        matches=matches+6;
+                    }
+                    else if(ch=='8'){
+                        matches=matches+7;
+                    }
+                     else if(ch=='7'){
+                        matches=matches+3;
+                    }
+
+             }
+
+             if(matches%2==0){
+                 for(int k=0;k<matches/2;k++){
+                     max=max+'1';
+                 }
+
+             }
+             else{
+
+                 int l=(matches-3)/2;
+                 max=max+'7';
+                 for(int k=0;k<l;k++){
+                     max=max+'1';
+                 }
+             }
+
+              System.out.println(max);
+        }
+
+
+    }
+}
