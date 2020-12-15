@@ -1,0 +1,40 @@
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+
+        for(int i=0;i<t;i++){
+            
+            int c=0;
+            int[] f1=new int[26];
+            int[] f2=new int[26];
+            String s1=sc.next();
+            String s2=sc.next();
+            int l=s1.length();
+
+            for(int j=0;j<l;j++){
+                 int a1=s1.charAt(j)-'a';
+                 int a2=s2.charAt(j)-'a';
+                  f1[a1]++;
+                  f2[a2]++;
+            }
+
+             for(int k=0;k<l;k++){
+                  int a=s1.charAt(k)-'a';
+                  //System.out.println(s1.charAt(k)+" "+f1[a]+" "+f2[a]);
+                  if(f1[a]!=f2[a]){
+                      System.out.println("NO");
+                      break;
+                  }
+                  else{
+                      c++;
+                  }
+             }
+
+             if(l==c){
+                 System.out.println("YES");
+             }
+        }    
+    }
+}
