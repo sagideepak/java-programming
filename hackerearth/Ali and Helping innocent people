@@ -1,0 +1,28 @@
+import java.util.*;
+import java.io.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+         String s=br.readLine();
+        int t1=(int)s.charAt(0) + (int)s.charAt(1);
+        int t2=(int)s.charAt(3) + (int)s.charAt(4);
+        int t3=(int)s.charAt(4) + (int)s.charAt(5);
+        int t4=(int)s.charAt(7) + (int)s.charAt(8);
+        
+        if( (t1%2 == 0) && (t2%2 == 0) && (t3%2 == 0) && (t4%2 == 0) ){
+
+            if( (s.charAt(2)!='A') && (s.charAt(2)!='E') && (s.charAt(2)!='I') && (s.charAt(2)!='O') &&   (s.charAt(2)!='U') && (s.charAt(2)!='Y') ){
+                System.out.println("valid");
+            }
+             else{
+                 System.out.println("invalid");
+        }
+
+        }
+        else{
+                 System.out.println("invalid");
+        }
+
+
+    }
+}
