@@ -1,0 +1,10 @@
+import java.io.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+          BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            String n=br.readLine();
+            String s=br.readLine();
+            System.out.println(s);
+
+    }
+}
